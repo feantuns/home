@@ -18,5 +18,25 @@
     "liveUrl": "https://feantuns.github.io/contador-react/",
     "repoUrl": "https://github.com/feantuns/contador-react",
     "cover": "/home/images/contador-react.svg"
+  },
+  {
+    "id": "project-3",
+    "title": "Ableton Clone",
+    "description": "Clone da interface do Ableton Live, focado em acessibilidade e performance.",
+    "tech": ["React", "TypeScript", "Vite", "Tailwind"],
+    "date": "2025-08-10",
+    "liveUrl": "https://feantuns.github.io/ableton/",
+    "repoUrl": "https://github.com/feantuns/ableton",
+    "cover": "/home/images/ableton.svg"
+  },
+  {
+    "id": "project-4",
+    "title": "Monstercat Clone",
+    "description": "Clone da interface do Monstercat, focado em acessibilidade e performance.",
+    "tech": ["React", "TypeScript", "Vite", "Tailwind"],
+    "date": "2025-08-10",
+    "liveUrl": "https://feantuns.github.io/monstercat/",
+    "repoUrl": "https://github.com/feantuns/monstercat",
+    "cover": "/home/images/monstercat.svg"
   }
 ]
