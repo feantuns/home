@@ -104,7 +104,12 @@ export default function App() {
             <span>Code by myself</span>
           </div>
           <div>
-            <a href="https://feantuns.github.io/contact/" className="underline">
+            <a
+              href="https://feantuns.github.io/contact/"
+              target="_blank"
+              rel="noreferrer"
+              className="underline"
+            >
               {t("contact")}
             </a>
           </div>
