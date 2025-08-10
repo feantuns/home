@@ -33,7 +33,7 @@
     "id": "project-4",
     "title": "Monstercat Clone",
     "description": "Clone da interface do Monstercat, focado em acessibilidade e performance.",
-    "tech": ["React", "TypeScript", "Vite", "Tailwind"],
+    "tech": ["React", "TypeScript", "Next", "Tailwind"],
     "date": "2025-08-10",
     "liveUrl": "https://feantuns.github.io/monstercat/",
     "repoUrl": "https://github.com/feantuns/monstercat",
