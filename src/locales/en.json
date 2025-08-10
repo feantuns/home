@@ -1,0 +1,15 @@
+{
+  "name": "Felipe Antunes",
+  "headline": "Senior Front-end Developer",
+  "bio": "I build accessible, high-performance interfaces and use AI strategically to accelerate product delivery.",
+  "skills": [
+    "Accessibility",
+    "Performance",
+    "AI Integration",
+    "React",
+    "Design Systems"
+  ],
+  "projects": "Projects",
+  "contact": "Contact",
+  "date_format_example": "{{date, date}}"
+}

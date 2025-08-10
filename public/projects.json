@@ -1,0 +1,12 @@
+[
+  {
+    "id": "project-1",
+    "title": "Landing otimizada - e-commerce",
+    "description": "Performance e acessibilidade com foco em Core Web Vitals.",
+    "tech": ["React", "Vite", "Tailwind"],
+    "date": "2024-11-10",
+    "liveUrl": "#",
+    "repoUrl": "#",
+    "cover": "/images/project1.jpg"
+  }
+]

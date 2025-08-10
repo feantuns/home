@@ -1,0 +1,15 @@
+{
+  "name": "Felipe Antunes",
+  "headline": "Desenvolvedor Front-end Sênior",
+  "bio": "Crio interfaces acessíveis e de alta performance, usando IA estrategicamente para acelerar a entrega de produtos.",
+  "skills": [
+    "Acessibilidade",
+    "Performance",
+    "Integração com IA",
+    "React",
+    "Design Systems"
+  ],
+  "projects": "Projetos",
+  "contact": "Contato",
+  "date_format_example": "{{date, date}}"
+}
