@@ -1,0 +1,20 @@
+<svg width="300" height="300" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="hsl(353, 62%, 37%)" />
+      <stop offset="100%" stop-color="hsl(180, 87%, 35%)" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" fill="url(#grad)" rx="20" />
+  <text
+    x="50%"
+    y="50%"
+    font-size="160"
+    font-family="Arial, sans-serif"
+    font-weight="bold"
+    fill="white"
+    text-anchor="middle"
+    dominant-baseline="middle">
+    C
+  </text>
+</svg>

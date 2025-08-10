@@ -1,12 +1,22 @@
 [
   {
     "id": "project-1",
-    "title": "Landing otimizada - e-commerce",
-    "description": "Performance e acessibilidade com foco em Core Web Vitals.",
-    "tech": ["React", "Vite", "Tailwind"],
-    "date": "2024-11-10",
-    "liveUrl": "#",
-    "repoUrl": "#",
-    "cover": "/images/project1.jpg"
+    "title": "Frontend Practice",
+    "description": "Projetos para praticar habilidades de front-end, incluindo acessibilidade, performance e integração com IA.",
+    "tech": ["Tailwind"],
+    "date": "2025-08-10",
+    "liveUrl": "https://feantuns.github.io/frontend-practice/",
+    "repoUrl": "https://github.com/feantuns/frontend-practice",
+    "cover": "/home/images/frontend-practice.svg"
+  },
+  {
+    "id": "project-2",
+    "title": "Contador de Caracteres",
+    "description": "Contador de caracteres e palavras simples e acessível, ideal para escritores e desenvolvedores.",
+    "tech": ["React", "TypeScript", "Vite", "Tailwind"],
+    "date": "2025-08-10",
+    "liveUrl": "https://feantuns.github.io/contador-react/",
+    "repoUrl": "https://github.com/feantuns/contador-react",
+    "cover": "/home/images/contador-react.svg"
   }
 ]

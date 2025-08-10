@@ -14,7 +14,7 @@ export default function App() {
     if (stored) i18n.changeLanguage(stored);
 
     // Fetch projects from public/projects.json (or proxy to headless CMS)
-    fetch("/projects.json")
+    fetch("/home/projects.json")
       .then(res => res.json())
       .then(data => setProjects(data))
       .catch(() => setProjects([]))
@@ -60,7 +60,7 @@ export default function App() {
 
           <div className="mx-auto">
             <img
-              src="/images/avatar.jpg"
+              src="/home/images/avatar.jpg"
               alt="Foto do desenvolvedor"
               className="w-40 h-40 rounded-full object-cover shadow-lg"
               loading="lazy"
@@ -79,9 +79,19 @@ export default function App() {
                 Carregando projetos...
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div
+                className="flex gap-4 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent"
+                role="list"
+                aria-label={t("projects")}
+              >
                 {projects.map(p => (
-                  <ProjectCard key={p.id} project={p} />
+                  <div
+                    key={p.id}
+                    className="flex-shrink-0 w-72" // largura fixa para cada card
+                    role="listitem"
+                  >
+                    <ProjectCard project={p} />
+                  </div>
                 ))}
               </div>
             )}

@@ -8,7 +8,7 @@ export default function ProjectCard({ project }) {
       <img
         src={project.cover}
         alt={`Capa do projeto ${project.title}`}
-        className="w-full h-40 object-cover rounded-md mb-3"
+        className="w-full h-40 object-cover object-left rounded-md mb-3"
         loading="lazy"
       />
       <h3 id={`p-${project.id}`} className="text-lg font-semibold">
