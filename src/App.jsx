@@ -53,7 +53,7 @@ export default function App() {
                 href="#projects"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2"
               >
-                Ver projetos
+                {t("see_projects")}
               </a>
             </div>
           </div>
