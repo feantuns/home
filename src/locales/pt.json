@@ -10,6 +10,7 @@
     "Design Systems"
   ],
   "projects": "Projetos",
+  "projects_description": "Aqui estão alguns dos meus projetos recentes. Você pode encontrar mais detalhes e acessar os repositórios no GitHub.",
   "contact": "Contato",
   "date_format_example": "{{date, date}}"
 }

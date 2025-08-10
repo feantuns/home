@@ -65,17 +65,13 @@ export default function App() {
               className="w-40 h-40 rounded-full object-cover shadow-lg"
               loading="lazy"
             />
-            <p className="sr-only">Photo credit: Code by Zeba Academy</p>
           </div>
         </section>
 
         {/* Projects */}
         <section id="projects">
           <h3 className="text-lg font-semibold">{t("projects")}</h3>
-          <p className="text-sm text-gray-600">
-            Exibindo projetos dinâmicos carregados do arquivo JSON. (Extensível
-            para CMS)
-          </p>
+          <p className="text-sm text-gray-600">{t("projects_description")}</p>
 
           <div className="mt-4">
             {loading ? (
@@ -95,8 +91,7 @@ export default function App() {
         {/* Footer */}
         <footer className="pt-8 border-t mt-8 text-sm text-gray-600 flex items-center justify-between">
           <div>
-            <span>Code by Zeba Academy</span>
-            <span className="ml-3">• Reddit +1</span>
+            <span>Code by myself</span>
           </div>
           <div>
             <a href="#contact" className="underline">
