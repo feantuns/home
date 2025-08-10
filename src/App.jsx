@@ -94,7 +94,7 @@ export default function App() {
             <span>Code by myself</span>
           </div>
           <div>
-            <a href="#contact" className="underline">
+            <a href="https://feantuns.github.io/contact/" className="underline">
               {t("contact")}
             </a>
           </div>
