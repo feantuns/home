@@ -27,9 +27,9 @@ function generateCoverSVG(name) {
   <rect width="300" height="300" fill="url(#grad)" rx="20" />
   <text
     x="50%"
-    y="50%"
-    font-size="160"
-    font-family="Arial, sans-serif"
+    y="53%"
+    font-size="140"
+    font-family="system-ui, sans-serif"
     font-weight="bold"
     fill="white"
     text-anchor="middle"
@@ -43,5 +43,5 @@ function generateCoverSVG(name) {
 // Example usage
 const projectName = process.argv[2] || "Project";
 const svg = generateCoverSVG(projectName);
-fs.writeFileSync(`${projectName}.svg`, svg);
+fs.writeFileSync(`../public/images/${projectName}.svg`, svg);
 console.log(`✅ Cover for "${projectName}" saved as ${projectName}.svg`);
