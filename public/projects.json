@@ -12,7 +12,7 @@
   {
     "id": "project-2",
     "title": "Contador de Caracteres",
-    "description": "Contador de caracteres e palavras simples e acessível, ideal para escritores e desenvolvedores.",
+    "description": "Contador de caracteres e palavras, simples e acessível.",
     "tech": ["React", "TypeScript", "Vite", "Tailwind"],
     "date": "2025-08-10",
     "liveUrl": "https://feantuns.github.io/contador-react/",
