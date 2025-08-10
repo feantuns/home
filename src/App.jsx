@@ -80,14 +80,14 @@ export default function App() {
               </div>
             ) : (
               <div
-                className="flex gap-4 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent"
+                className="flex gap-4 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent items-stretch"
                 role="list"
                 aria-label={t("projects")}
               >
                 {projects.map(p => (
                   <div
                     key={p.id}
-                    className="flex-shrink-0 w-72" // largura fixa para cada card
+                    className="flex-shrink-0 w-72"
                     role="listitem"
                   >
                     <ProjectCard project={p} />

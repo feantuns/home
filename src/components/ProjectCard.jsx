@@ -1,7 +1,7 @@
 export default function ProjectCard({ project }) {
   return (
     <article
-      className="border rounded-lg p-4 hover:shadow-lg transition-shadow duration-200 focus-within:shadow-lg"
+      className="h-full border rounded-lg p-4 hover:shadow-lg transition-shadow duration-200 focus-within:shadow-lg"
       tabIndex={0}
       aria-labelledby={`p-${project.id}`}
     >
