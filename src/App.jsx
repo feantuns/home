@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import LanguageToggle from "./components/LanguageToggle";
 import ProjectCard from "./components/ProjectCard";

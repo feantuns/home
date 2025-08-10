@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-labelledby="title">
+  <title id="title">F - Felipe Antunes</title>
+  <!-- background circle -->
+  <rect width="32" height="32" rx="6" fill="#0f172a"/>
+  <!-- subtle inner rounded square for depth -->
+  <rect x="3" y="3" width="26" height="26" rx="4" fill="#0b1220"/>
+  <!-- stylized F shape (two-tone via fill and cut) -->
+  <path d="M8 6h10v2H11v4h7v2H11v6H8z" fill="#f8fafc"/>
+  <!-- diagonal cut to make it unique -->
+  <path d="M18 6 L23 6 L14 20 L9 20 Z" fill="#0b1220" opacity="0.14"/>
+</svg>

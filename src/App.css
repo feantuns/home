@@ -1,9 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+  outline: 0 solid transparent;
+  outline-offset: 0;
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3); /* show clear focus ring */
 }
