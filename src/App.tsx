@@ -45,12 +45,36 @@ export default function App() {
             <div className="flex items-center gap-5">
               <div className="relative flex-shrink-0">
                 <div className="absolute inset-0 rounded-full bg-indigo-100 scale-110" aria-hidden="true" />
-                <img
-                  src="/home/images/avatar.jpg"
-                  alt={t("name")}
-                  className="relative w-20 h-20 rounded-full object-cover shadow-md ring-4 ring-white"
-                  loading="eager"
-                />
+                {/* Easter egg: hover to flip */}
+                <div
+                  className="relative w-20 h-20"
+                  style={{ perspective: "600px" }}
+                  title="😎"
+                >
+                  <div
+                    className="w-full h-full transition-transform duration-700 ease-in-out"
+                    style={{ transformStyle: "preserve-3d" }}
+                    onMouseEnter={e => (e.currentTarget.style.transform = "rotateY(180deg)")}
+                    onMouseLeave={e => (e.currentTarget.style.transform = "rotateY(0deg)")}
+                  >
+                    {/* Front: avatar */}
+                    <img
+                      src="/home/images/avatar.jpg"
+                      alt={t("name")}
+                      className="absolute inset-0 w-20 h-20 rounded-full object-cover shadow-md ring-4 ring-white"
+                      style={{ backfaceVisibility: "hidden" }}
+                      loading="eager"
+                    />
+                    {/* Back: cool emoji */}
+                    <div
+                      className="absolute inset-0 w-20 h-20 rounded-full bg-indigo-600 ring-4 ring-white shadow-md flex items-center justify-center text-4xl select-none"
+                      style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+                      aria-hidden="true"
+                    >
+                      😎
+                    </div>
+                  </div>
+                </div>
               </div>
               <div>
                 <h1 className="text-4xl font-bold tracking-tight text-gray-900">
