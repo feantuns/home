@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import type { Project } from "../types";
 
 interface Props {
@@ -5,6 +6,7 @@ interface Props {
 }
 
 export default function ProjectCard({ project }: Props) {
+  const { t } = useTranslation();
   return (
     <article
       className="group h-full flex flex-col bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 focus-within:shadow-md"
@@ -25,7 +27,7 @@ export default function ProjectCard({ project }: Props) {
             {project.title}
           </h3>
           <p className="text-sm text-gray-500 mt-1 leading-relaxed">
-            {project.description}
+            {t(`${project.id}.description`)}
           </p>
         </div>
 

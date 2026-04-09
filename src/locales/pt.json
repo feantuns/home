@@ -13,5 +13,10 @@
   "projects": "Projetos",
   "projects_description": "Aqui estão alguns dos meus projetos recentes. Você pode encontrar mais detalhes e acessar os repositórios no GitHub.",
   "contact": "Contato",
-  "date_format_example": "{{date, date}}"
+  "date_format_example": "{{date, date}}",
+  "project-1": { "description": "Projetos para praticar habilidades de front-end, incluindo acessibilidade, performance e integração com IA." },
+  "project-2": { "description": "Contador de caracteres e palavras, simples e acessível." },
+  "project-3": { "description": "Clone da interface do Ableton Live, focado em acessibilidade e performance." },
+  "project-4": { "description": "Clone da interface do Monstercat, focado em acessibilidade e performance." },
+  "project-5": { "description": "Utilitários de front-end para uso geral." }
 }
