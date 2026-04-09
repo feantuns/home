@@ -10,24 +10,24 @@ export default function LanguageToggle() {
 
   return (
     <div
-      className="flex items-center gap-2"
+      className="flex items-center gap-1 p-1 bg-gray-100 rounded-lg"
       role="navigation"
       aria-label="Language switcher"
     >
-      <button
-        onClick={() => switchTo("pt")}
-        className="px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-offset-2"
-        aria-pressed={i18n.language === "pt"}
-      >
-        PT
-      </button>
-      <button
-        onClick={() => switchTo("en")}
-        className="px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-offset-2"
-        aria-pressed={i18n.language === "en"}
-      >
-        EN
-      </button>
+      {(["pt", "en"] as const).map(lng => (
+        <button
+          key={lng}
+          onClick={() => switchTo(lng)}
+          className={`px-3 py-1 text-xs font-semibold rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 ${
+            i18n.language === lng
+              ? "bg-white text-gray-900 shadow-sm"
+              : "text-gray-500 hover:text-gray-700"
+          }`}
+          aria-pressed={i18n.language === lng}
+        >
+          {lng.toUpperCase()}
+        </button>
+      ))}
     </div>
   );
 }

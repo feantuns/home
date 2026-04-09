@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import LanguageToggle from "./components/LanguageToggle";
-import ProjectCard from "./components/ProjectCard";
+import ProjectsCarousel from "./components/ProjectsCarousel";
 import type { Project } from "./types";
+
+function ProjectSkeleton() {
+  return (
+    <div className="flex-shrink-0 w-72 h-80 rounded-xl border border-gray-100 bg-gray-50 animate-pulse" />
+  );
+}
 
 export default function App() {
   const { t, i18n } = useTranslation();
@@ -21,95 +27,111 @@ export default function App() {
   }, [i18n]);
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 antialiased">
-      <header className="max-w-4xl mx-auto p-6 flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold">{t("name")}</h1>
-          <p className="text-sm text-gray-600">{t("headline")}</p>
-        </div>
-        <div className="flex items-center gap-4">
+    <div className="min-h-screen bg-gray-50 text-gray-900 antialiased">
+      {/* Header */}
+      <header className="sticky top-0 z-10 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+          <span className="text-sm font-semibold tracking-tight text-gray-900">
+            {t("name")}
+          </span>
           <LanguageToggle />
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto p-6 space-y-8">
-        {/* Hero */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-          <div className="md:col-span-2">
-            <h2 className="text-xl font-semibold">{t("headline")}</h2>
-            <p className="mt-3 text-gray-700 leading-relaxed">{t("bio")}</p>
+      <main className="py-16 space-y-20">
+        {/* Hero — constrained width */}
+        <div className="max-w-4xl mx-auto px-6">
+          <section className="space-y-5">
+            <div className="flex items-center gap-5">
+              <div className="relative flex-shrink-0">
+                <div className="absolute inset-0 rounded-full bg-indigo-100 scale-110" aria-hidden="true" />
+                <img
+                  src="/home/images/avatar.jpg"
+                  alt={t("name")}
+                  className="relative w-20 h-20 rounded-full object-cover shadow-md ring-4 ring-white"
+                  loading="eager"
+                />
+              </div>
+              <div>
+                <h1 className="text-4xl font-bold tracking-tight text-gray-900">
+                  {t("name")}
+                </h1>
+                <p className="mt-1 text-lg text-indigo-600 font-medium">
+                  {t("headline")}
+                </p>
+              </div>
+            </div>
 
-            <ul className="mt-4 flex flex-wrap gap-2" aria-label="skills list">
+            <p className="text-gray-600 leading-relaxed">{t("bio")}</p>
+
+            <ul className="flex flex-wrap gap-2" aria-label="skills list">
               {(t("skills", { returnObjects: true }) as string[]).map(s => (
-                <li key={s} className="text-sm px-2 py-1 bg-gray-100 rounded">
+                <li
+                  key={s}
+                  className="text-xs font-medium px-3 py-1 bg-indigo-50 text-indigo-700 rounded-full border border-indigo-100"
+                >
                   {s}
                 </li>
               ))}
             </ul>
 
-            <div className="mt-6">
+            <div className="flex gap-3 pt-1">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 {t("see_projects")}
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </a>
+              <a
+                href="https://feantuns.github.io/contact/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-gray-700 text-sm font-medium rounded-lg border border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
+              >
+                {t("contact")}
               </a>
             </div>
+          </section>
+        </div>
+
+        {/* Projects — full width */}
+        <section id="projects" className="space-y-6">
+          <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+              {t("projects")}
+            </h2>
+            <p className="mt-1 text-sm text-gray-500">{t("projects_description")}</p>
           </div>
 
-          <div className="mx-auto">
-            <img
-              src="/home/images/avatar.jpg"
-              alt="Foto do desenvolvedor"
-              className="w-40 h-40 rounded-full object-cover shadow-lg"
-              loading="lazy"
-            />
-          </div>
+          {loading ? (
+            <div className="flex gap-5 px-6">
+              {Array.from({ length: 4 }).map((_, i) => (
+                <ProjectSkeleton key={i} />
+              ))}
+            </div>
+          ) : (
+            <ProjectsCarousel projects={projects} label={t("projects")} />
+          )}
         </section>
-
-        {/* Projects */}
-        <section id="projects">
-          <h3 className="text-lg font-semibold">{t("projects")}</h3>
-          <p className="text-sm text-gray-600">{t("projects_description")}</p>
-
-          <div className="mt-4">
-            {loading ? (
-              <div role="status" aria-live="polite">
-                Carregando projetos...
-              </div>
-            ) : (
-              <div
-                className="flex gap-4 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent items-stretch"
-                role="list"
-                aria-label={t("projects")}
-              >
-                {projects.map(p => (
-                  <div key={p.id} className="flex-shrink-0 w-72" role="listitem">
-                    <ProjectCard project={p} />
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </section>
-
-        {/* Footer */}
-        <footer className="pt-8 border-t mt-8 text-sm text-gray-600 flex items-center justify-between">
-          <div>
-            <span>Code by myself</span>
-          </div>
-          <div>
-            <a
-              href="https://feantuns.github.io/contact/"
-              target="_blank"
-              rel="noreferrer"
-              className="underline"
-            >
-              {t("contact")}
-            </a>
-          </div>
-        </footer>
       </main>
+
+      {/* Footer */}
+      <footer className="border-t border-gray-100 bg-white">
+        <div className="max-w-4xl mx-auto px-6 py-6 flex items-center justify-between text-xs text-gray-400">
+          <span>© {new Date().getFullYear()} {t("name")}</span>
+          <a
+            href="https://feantuns.github.io/contact/"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-gray-600 transition-colors underline underline-offset-2"
+          >
+            {t("contact")}
+          </a>
+        </div>
+      </footer>
     </div>
   );
 }

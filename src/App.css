@@ -1,5 +1,21 @@
-:focus {
-  outline: 0 solid transparent;
-  outline-offset: 0;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3); /* show clear focus ring */
+:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes scroll-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.carousel-track {
+  animation: scroll-x 30s linear infinite;
+}
+
+.carousel-track.paused {
+  animation-play-state: paused;
 }
