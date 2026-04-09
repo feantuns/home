@@ -4,7 +4,10 @@ import App from "./App";
 import "./index.css";
 import "./i18n";
 
-createRoot(document.getElementById("root")).render(
+const root = document.getElementById("root");
+if (!root) throw new Error("Root element not found");
+
+createRoot(root).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>

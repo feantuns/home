@@ -3,9 +3,8 @@ import { useTranslation } from "react-i18next";
 export default function LanguageToggle() {
   const { i18n } = useTranslation();
 
-  const switchTo = lng => {
+  const switchTo = (lng: string) => {
     i18n.changeLanguage(lng);
-    // Otimização: armazenar preferência
     localStorage.setItem("lang", lng);
   };
 

@@ -2,21 +2,20 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import LanguageToggle from "./components/LanguageToggle";
 import ProjectCard from "./components/ProjectCard";
+import type { Project } from "./types";
 
 export default function App() {
   const { t, i18n } = useTranslation();
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Detect language once on mount (i18next Browser language detector covers this)
     const stored = localStorage.getItem("lang");
     if (stored) i18n.changeLanguage(stored);
 
-    // Fetch projects from public/projects.json (or proxy to headless CMS)
     fetch("/home/projects.json")
       .then(res => res.json())
-      .then(data => setProjects(data))
+      .then((data: Project[]) => setProjects(data))
       .catch(() => setProjects([]))
       .finally(() => setLoading(false));
   }, [i18n]);
@@ -41,7 +40,7 @@ export default function App() {
             <p className="mt-3 text-gray-700 leading-relaxed">{t("bio")}</p>
 
             <ul className="mt-4 flex flex-wrap gap-2" aria-label="skills list">
-              {t("skills", { returnObjects: true }).map(s => (
+              {(t("skills", { returnObjects: true }) as string[]).map(s => (
                 <li key={s} className="text-sm px-2 py-1 bg-gray-100 rounded">
                   {s}
                 </li>
@@ -85,11 +84,7 @@ export default function App() {
                 aria-label={t("projects")}
               >
                 {projects.map(p => (
-                  <div
-                    key={p.id}
-                    className="flex-shrink-0 w-72"
-                    role="listitem"
-                  >
+                  <div key={p.id} className="flex-shrink-0 w-72" role="listitem">
                     <ProjectCard project={p} />
                   </div>
                 ))}

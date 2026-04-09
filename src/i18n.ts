@@ -6,18 +6,18 @@ import en from "./locales/en.json";
 import pt from "./locales/pt.json";
 
 i18n
-  .use(LanguageDetector) // detecta idioma do navegador
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources: { en: { translation: en }, pt: { translation: pt } },
     fallbackLng: "en",
     debug: false,
     interpolation: {
-      escapeValue: false, // react já protege
-      format: (value, format, lng) => {
+      escapeValue: false,
+      format: (value: unknown, format?: string, lng?: string) => {
         if (format === "date")
-          return new Intl.DateTimeFormat(lng).format(new Date(value));
-        return value;
+          return new Intl.DateTimeFormat(lng).format(new Date(value as string));
+        return String(value);
       },
     },
     detection: {

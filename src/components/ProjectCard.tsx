@@ -1,4 +1,10 @@
-export default function ProjectCard({ project }) {
+import type { Project } from "../types";
+
+interface Props {
+  project: Project;
+}
+
+export default function ProjectCard({ project }: Props) {
   return (
     <article
       className="h-full border rounded-lg p-4 hover:shadow-lg transition-shadow duration-200 focus-within:shadow-lg"
