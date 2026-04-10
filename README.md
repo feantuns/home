@@ -1,12 +1,41 @@
-# React + Vite
+# Felipe Antunes — Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio built with React, TypeScript and Tailwind CSS. Supports English and Portuguese via i18n, and is automatically deployed to GitHub Pages via CI/CD.
 
-Currently, two official plugins are available:
+🔗 **[feantuns.github.io/home](https://feantuns.github.io/home/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) — build tool and dev server
+- [Tailwind CSS v4](https://tailwindcss.com/)
+- [i18next](https://www.i18next.com/) — internationalization (EN / PT)
+- [GitHub Actions](https://github.com/features/actions) — CI/CD pipeline deploying to GitHub Pages
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+The app will be available at `http://localhost:5173`.
+
+## Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the development server |
+| `npm run build` | Build for production |
+| `npm run lint` | Run ESLint |
+| `npm run preview` | Preview the production build locally |
+
+## Deployment
+
+Every push to `main` triggers the GitHub Actions pipeline, which builds the project and deploys it to GitHub Pages automatically.
+
+## License
+
+MIT
