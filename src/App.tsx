@@ -54,8 +54,8 @@ export default function App() {
                   <div
                     className="w-full h-full transition-transform duration-700 ease-in-out"
                     style={{ transformStyle: "preserve-3d" }}
-                    onMouseEnter={e => (e.currentTarget.style.transform = "rotateY(180deg)")}
-                    onMouseLeave={e => (e.currentTarget.style.transform = "rotateY(0deg)")}
+                    onPointerEnter={e => (e.currentTarget.style.transform = "rotateY(180deg)")}
+                    onPointerLeave={e => (e.currentTarget.style.transform = "rotateY(0deg)")}
                   >
                     {/* Front: avatar */}
                     <img
