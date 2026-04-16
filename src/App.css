@@ -19,3 +19,11 @@ html {
 .carousel-track.paused {
   animation-play-state: paused;
 }
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

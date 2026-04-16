@@ -18,5 +18,6 @@
   "project-2": { "description": "A simple and accessible character and word counter." },
   "project-3": { "description": "Clone of the Ableton Live interface, focused on accessibility and performance." },
   "project-4": { "description": "Clone of the Monstercat interface, focused on accessibility and performance." },
-  "project-5": { "description": "General-purpose front-end utilities." }
+  "project-5": { "description": "General-purpose front-end utilities." },
+  "project-6": { "description": "A tool to manage and track your movie and series watchlist." }
 }
