@@ -12,6 +12,7 @@ export default function ProjectsCarousel({ projects, label }: Props) {
   const trackRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
+  const hasMoved = useRef(false);
   const startX = useRef(0);
   const scrollLeft = useRef(0);
 
@@ -20,24 +21,31 @@ export default function ProjectsCarousel({ projects, label }: Props) {
 
   function onPointerDown(e: React.PointerEvent) {
     isDragging.current = true;
+    hasMoved.current = false;
     startX.current = e.clientX;
     scrollLeft.current = containerRef.current?.scrollLeft ?? 0;
-    containerRef.current?.setPointerCapture(e.pointerId);
-    setPaused(true);
   }
 
   function onPointerMove(e: React.PointerEvent) {
     if (!isDragging.current) return;
     const dx = e.clientX - startX.current;
-    if (containerRef.current) {
+    if (!hasMoved.current && Math.abs(dx) > 5) {
+      hasMoved.current = true;
+      containerRef.current?.setPointerCapture(e.pointerId);
+      setPaused(true);
+    }
+    if (hasMoved.current && containerRef.current) {
       containerRef.current.scrollLeft = scrollLeft.current - dx;
     }
   }
 
   function onPointerUp(e: React.PointerEvent) {
+    if (hasMoved.current) {
+      containerRef.current?.releasePointerCapture(e.pointerId);
+      setPaused(false);
+    }
     isDragging.current = false;
-    containerRef.current?.releasePointerCapture(e.pointerId);
-    setPaused(false);
+    hasMoved.current = false;
   }
 
   return (
