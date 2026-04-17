@@ -16,7 +16,8 @@ export default function ProjectCard({ project }: Props) {
         <img
           src={project.cover}
           alt={`${project.title}`}
-          className="w-full h-40 object-cover object-left group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-40 object-cover object-left group-hover:scale-105 transition-transform duration-300 pointer-events-none"
+          draggable="false"
           loading="lazy"
         />
       </div>
