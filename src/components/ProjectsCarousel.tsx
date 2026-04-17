@@ -51,7 +51,7 @@ export default function ProjectsCarousel({ projects, label }: Props) {
   return (
     <div
       ref={containerRef}
-      className="relative overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing"
+      className="relative overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing select-none"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => { if (!isDragging.current) setPaused(false); }}
       onFocusCapture={() => setPaused(true)}
